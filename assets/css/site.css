@@ -49,6 +49,10 @@ a:hover { color: var(--brick-dark); }
 /* no will-change here: Safari paints the drop-shadowed painting as a blank box inside a promoted layer until the next scroll */
 .hero-art-layer { height: 100%; display: flex; justify-content: center; }
 .hero-art img { height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; filter: drop-shadow(0 22px 22px rgba(58,47,43,.2)); }
+/* desktop: the painting reaches past the top and bottom of the hero content, into the padding */
+@media (min-width: 1100px) {
+  .hero-art-frame { height: calc(clamp(420px,72vh,780px) + 2 * clamp(32px,4vw,64px)); margin: calc(-1 * clamp(32px,4vw,64px)) 0; }
+}
 
 /* Business model */
 .model { border-top: 1px solid rgba(61,58,55,.14); padding: clamp(72px,10vw,150px) 0; }
