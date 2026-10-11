@@ -91,7 +91,7 @@ a:hover { color: var(--brick-dark); }
 /* no divider above this section, so it starts close to the role cards */
 .one-place { padding-top: clamp(24px,3vw,48px); padding-bottom: clamp(88px,11vw,170px); }
 .one-place-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; margin-bottom: clamp(52px,6vw,96px); }
-.one-place-head .h2 { font-size: clamp(38px,4.6vw,68px); max-width: none; }
+.one-place-head .h2 { max-width: none; }
 .one-place-sub { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(19px,1.6vw,23px); color: var(--ink-soft); }
 .pillars { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,240px),1fr)); gap: clamp(36px,3.4vw,56px); }
 .pillar { position: relative; display: flex; flex-direction: column; gap: 14px; padding-top: 28px; }
