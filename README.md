@@ -1,6 +1,6 @@
 # Cimelium
 
-The Cimelium home page, live at https://kabir192003.github.io/Cimelium/
+The Cimelium home page, live at https://cimelium.com
 
 It's a small static site that GitHub Pages builds with Jekyll, so there's no build step to run yourself. Push to `main` and the site updates in a minute or two.
 
@@ -29,7 +29,7 @@ A few things to know:
 
 ```bash
 gem install bundler jekyll
-jekyll serve --baseurl /Cimelium
+jekyll serve
 ```
 
-Then open http://localhost:4000/Cimelium/
+Then open http://localhost:4000/
