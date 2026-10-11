@@ -31,7 +31,10 @@
         el.style.transform = `translate3d(0,${(-c * +el.dataset.px).toFixed(1)}px,0)`;
       }
       if (art) {
-        const k = clamp(scrollY / 700);
+        // on phones the painting starts below the fold, so soften it only as it scrolls off the top,
+        // otherwise it's already blurred by the time it's in view
+        const frame = art.parentElement.getBoundingClientRect();
+        const k = innerWidth < 760 ? clamp(-frame.top / (frame.height * .8)) : clamp(scrollY / 700);
         // at the top leave the stylesheet's plain drop-shadow alone, Safari renders the blur(0) chain as a blank box
         art.style.transform = k ? `scale(${(1 - .07 * k).toFixed(4)})` : '';
         art.style.filter = k ? `blur(${(k * 1.6).toFixed(2)}px) saturate(${(1 - .18 * k).toFixed(3)}) drop-shadow(0 22px 22px rgba(58,47,43,${(.2 - .12 * k).toFixed(3)}))` : '';
