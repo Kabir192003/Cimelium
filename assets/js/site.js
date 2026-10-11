@@ -98,13 +98,13 @@
   }
 
   // Pilot: the drapery drifts gently inside its frame as the section scrolls past.
-  // It's scaled up 10%, which leaves 5% spare on each edge, and only moves ±4%.
+  // It's scaled up 16%, which leaves 8% spare on each edge, and moves ±7%.
   function drapery() {
     const img = document.querySelector('[data-drapery]');
     return () => {
       if (!img || reduce) return;
       const t = pass(img.parentElement, innerHeight);
-      img.style.transform = `translate3d(0,${((.5 - t) * 8).toFixed(2)}%,0) scale(1.1)`;
+      img.style.transform = `translate3d(0,${((.5 - t) * 14).toFixed(2)}%,0) scale(1.16)`;
     };
   }
 
