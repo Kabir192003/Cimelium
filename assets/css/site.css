@@ -126,6 +126,19 @@ a:hover { color: var(--brick-dark); }
 .footer { padding-top: 36px; padding-bottom: 36px; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 20px; }
 .footer a { font-size: 14px; color: var(--ink-soft); }
 .footer a:hover { color: var(--brick); }
+.footer-tile { display: none; }
+.footer-tile img { display: block; width: 44px; height: auto; }
+
+/* Phones: tighter, even spacing in the hero and the Ci tile in the footer */
+@media (max-width: 759.98px) {
+  .hero { padding-top: 28px; gap: 56px; }
+  .brand-slot { margin-bottom: 16px; }
+  /* let the frame hug the painting, otherwise it keeps empty space above it */
+  .hero-art-frame, .hero-art-layer { height: auto; }
+  .hero-art img { width: 100%; height: auto; max-height: 72vh; }
+  .footer { justify-content: space-between; }
+  .footer-tile { display: block; }
+}
 
 /* Morphing logo (positioned every frame by site.js) */
 .brand { position: fixed; left: 0; top: 0; z-index: 60; display: block; width: 100px; height: 100px; transform-origin: 0 0; will-change: transform; }

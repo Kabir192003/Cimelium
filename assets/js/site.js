@@ -11,20 +11,27 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Logo: wordmark above the hero heading that turns into the tile parked top-left
+  // (on phones it morphs in place instead)
   function brand() {
     const el = document.querySelector('[data-brand]'), slot = document.querySelector('[data-brand-slot]');
     if (!el || !slot) return () => {};
     const word = el.querySelector('[data-bw]'), tile = el.querySelector('[data-bv]'), letters = tile.querySelector('[data-bvl]'), lettersPath = letters.firstElementChild;
-    el.addEventListener('click', e => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.querySelectorAll('[data-to-top]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); }));
 
     return () => {
-      const vw = innerWidth, r = slot.getBoundingClientRect();
-      const p = range(scrollY, 0, 520), e = ease(p);
-      // parked tile shrinks if needed so it sits inside the left margin with room either side
-      const s0 = r.height || 48, size = vw < 760 ? 46 : Math.max(40, Math.min(vw < 1100 ? 58 : 70, r.left - 24));
-      const fx = Math.max(10, Math.min(24, (r.left - size) / 2)), fy = vw < 760 ? 12 : 22;
-      const x = r.left + (fx - r.left) * e, y = r.top + (fy - r.top) * e, s = s0 + (size - s0) * e;
-      el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) scale(${(s / 100).toFixed(4)})`;
+      const vw = innerWidth, r = slot.getBoundingClientRect(), phone = vw < 760;
+      // on phones the morph finishes quickly and the tile stays put in the hero, scrolling away with it
+      const p = range(scrollY, 0, phone ? 200 : 520), e = ease(p);
+      const s0 = r.height || 48;
+      if (phone) {
+        el.style.transform = `translate3d(${r.left.toFixed(1)}px,${r.top.toFixed(1)}px,0) scale(${(s0 / 100).toFixed(4)})`;
+      } else {
+        // parked tile shrinks if needed so it sits inside the left margin with room either side
+        const size = Math.max(40, Math.min(vw < 1100 ? 58 : 70, r.left - 24));
+        const fx = Math.max(10, Math.min(24, (r.left - size) / 2)), fy = 22;
+        const x = r.left + (fx - r.left) * e, y = r.top + (fy - r.top) * e, s = s0 + (size - s0) * e;
+        el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) scale(${(s / 100).toFixed(4)})`;
+      }
 
       // "imelium" wipes away from the right, leaving the C
       word.style.clipPath = `inset(0 ${(75.9 * ease(range(p, 0, .5))).toFixed(2)}% 0 0)`;
@@ -51,7 +58,9 @@
     return () => {
       if (reduce) return;
       const vh = innerHeight;
+      // no parallax on phones: the hero stacks there, and the layers would squeeze the gap under the button
       for (const el of layers) {
+        if (innerWidth < 760) { el.style.transform = ''; continue; }
         const host = el.parentElement.getBoundingClientRect();
         if (host.bottom < -200 || host.top > vh + 200) continue;
         const c = host.top + host.height / 2 - vh / 2;
