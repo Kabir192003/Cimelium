@@ -1,50 +1,14 @@
-// Scroll motion for the Cimelium home page. Only four things move:
-// the logo morph, the hero parallax/depth, the stacking role cards with
-// their counter, and a gentle drift on the drapery in the pilot section.
+// Scroll motion for the Cimelium home page. Only three things move:
+// the hero parallax/depth, the stacking role cards with their counter,
+// and a gentle drift on the drapery in the pilot section.
 (function () {
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
-  const ease = t => 1 - Math.pow(1 - t, 3);
-  // 0 to 1 between scroll positions a and b
-  const range = (v, a, b) => clamp((v - a) / (b - a));
   // 0 to 1 as an element travels from viewport bottom to top
   const pass = (el, vh) => { const r = el.getBoundingClientRect(); return clamp((vh - r.top) / (vh + r.height)); };
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Logo: wordmark above the hero heading that turns into the tile parked top-left
-  // (on phones it morphs in place instead)
-  function brand() {
-    const el = document.querySelector('[data-brand]'), slot = document.querySelector('[data-brand-slot]');
-    if (!el || !slot) return () => {};
-    const word = el.querySelector('[data-bw]'), tile = el.querySelector('[data-bv]'), letters = tile.querySelector('[data-bvl]'), lettersPath = letters.firstElementChild;
-    document.querySelectorAll('[data-to-top]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); }));
-
-    return () => {
-      const vw = innerWidth, r = slot.getBoundingClientRect(), phone = vw < 760;
-      // on phones the morph finishes quickly and the tile stays put in the hero, scrolling away with it
-      const p = range(scrollY, 0, phone ? 200 : 520), e = ease(p);
-      const s0 = r.height || 48;
-      if (phone) {
-        el.style.transform = `translate3d(${r.left.toFixed(1)}px,${r.top.toFixed(1)}px,0) scale(${(s0 / 100).toFixed(4)})`;
-      } else {
-        // parked tile shrinks if needed so it sits inside the left margin with room either side
-        const size = Math.max(40, Math.min(vw < 1100 ? 58 : 70, r.left - 24));
-        const fx = Math.max(10, Math.min(24, (r.left - size) / 2)), fy = 22;
-        const x = r.left + (fx - r.left) * e, y = r.top + (fy - r.top) * e, s = s0 + (size - s0) * e;
-        el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) scale(${(s / 100).toFixed(4)})`;
-      }
-
-      // "imelium" wipes away from the right, leaving the C
-      word.style.clipPath = `inset(0 ${(75.9 * ease(range(p, 0, .5))).toFixed(2)}% 0 0)`;
-      word.style.opacity = (1 - range(p, .12, .34)).toFixed(3);
-
-      // tile fades in while CIMELIUM slides into its base and turns light
-      tile.style.opacity = range(p, .04, .3).toFixed(3);
-      const q = ease(range(p, 0, .5)), c = range(q, .55, .9);
-      letters.style.opacity = range(p, 0, .12).toFixed(3);
-      letters.setAttribute('transform', `translate(${((1 - q) * 95).toFixed(2)} ${((1 - q) * -20).toFixed(2)})`);
-      lettersPath.setAttribute('fill', `rgb(${Math.round(74 + 169 * c)},${Math.round(74 + 167 * c)},${Math.round(74 + 162 * c)})`);
-    };
-  }
+  // Footer tile takes you back to the top
+  document.querySelectorAll('[data-to-top]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); }));
 
   // Hero: text outruns the painting, painting shrinks and softens
   function hero() {
@@ -108,7 +72,7 @@
     };
   }
 
-  const steps = [brand(), hero(), cards(), drapery()];
+  const steps = [hero(), cards(), drapery()];
   let raf = 0;
   const run = () => { raf = 0; steps.forEach(f => f()); };
   const req = () => { if (!raf) raf = requestAnimationFrame(run); };
