@@ -20,7 +20,8 @@
     return () => {
       const vw = innerWidth, r = slot.getBoundingClientRect();
       const p = range(scrollY, 0, 520), e = ease(p);
-      const s0 = r.height || 48, size = vw < 760 ? 46 : vw < 1100 ? 58 : 70;
+      // parked tile shrinks if needed so it sits inside the left margin with room either side
+      const s0 = r.height || 48, size = vw < 760 ? 46 : Math.max(40, Math.min(vw < 1100 ? 58 : 70, r.left - 24));
       const fx = Math.max(10, Math.min(24, (r.left - size) / 2)), fy = vw < 760 ? 12 : 22;
       const x = r.left + (fx - r.left) * e, y = r.top + (fy - r.top) * e, s = s0 + (size - s0) * e;
       el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) scale(${(s / 100).toFixed(4)})`;
@@ -41,7 +42,12 @@
   // Hero: text outruns the painting, painting shrinks and softens
   function hero() {
     const layers = [...document.querySelectorAll('[data-px]')], art = document.querySelector('[data-hero-art]');
-    if (art) art.style.transformOrigin = '50% 40%';
+    if (art) {
+      art.style.transformOrigin = '50% 40%';
+      // repaint once the painting has decoded, so it never sits blank until the first scroll
+      const repaint = () => { art.style.visibility = 'hidden'; art.offsetHeight; art.style.visibility = ''; };
+      if (art.complete) repaint(); else art.addEventListener('load', repaint, { once: true });
+    }
     return () => {
       if (reduce) return;
       const vh = innerHeight;
@@ -53,8 +59,9 @@
       }
       if (art) {
         const k = clamp(scrollY / 700);
-        art.style.transform = `scale(${(1 - .07 * k).toFixed(4)})`;
-        art.style.filter = `blur(${(k * 1.6).toFixed(2)}px) saturate(${(1 - .18 * k).toFixed(3)}) drop-shadow(0 22px 22px rgba(58,47,43,${(.2 - .12 * k).toFixed(3)}))`;
+        // at the top leave the stylesheet's plain drop-shadow alone, Safari renders the blur(0) chain as a blank box
+        art.style.transform = k ? `scale(${(1 - .07 * k).toFixed(4)})` : '';
+        art.style.filter = k ? `blur(${(k * 1.6).toFixed(2)}px) saturate(${(1 - .18 * k).toFixed(3)}) drop-shadow(0 22px 22px rgba(58,47,43,${(.2 - .12 * k).toFixed(3)}))` : '';
       }
     };
   }
