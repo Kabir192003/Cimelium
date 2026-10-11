@@ -1,0 +1,89 @@
+# All the words and images on the home page live here.
+# Edit the text between the quotes, save, and GitHub Pages rebuilds the site
+# in a minute or two. The layout is in index.html and doesn't need touching.
+#
+# Images go in assets/img/. Refer to them by file name only.
+
+hero:
+  title: "The first open platform for the"
+  title_highlight: "Art World"   # shown in brick red at the end of the heading
+  subtitle: "We make acquiring, managing and sharing art 10x easier, through our AI-first platform"
+  button:
+    label: "Book a call"
+    link: "#book"
+  image: "hero-art.webp"
+  image_alt: "Painting of an abstract red and black figure"
+
+business_model:
+  title: "Bring your own business model"
+  lead: "Personalizing the art market through bespoke AI solutions focusing on acquisition, management, and sharing"
+  body: "Our Art Intelligence assistants help galleries increase their sales and marketing impact by automating internal processes and generating hyper-personalized outreach for gallery staff to review and approve."
+
+roles:
+  label: "Built for every corner of the art market"
+  # Each role becomes one stacking card. The big counter (01, 02 …) is
+  # numbered automatically, so adding or removing a role just works.
+  # image_focus picks which part of the painting stays in view (CSS object-position).
+  items:
+    - name: "Gallerists"
+      text: "Turn every enquiry into a relationship. Match collectors to works, draft follow-ups and keep every artwork’s story consistent across channels."
+      image: "art-1.webp"
+      image_focus: "center 40%"
+    - name: "Art Advisors"
+      text: "Research faster, advise better. Surface comparable works, trace provenance and brief each client in your own voice."
+      image: "art-2.webp"
+      image_focus: "center 30%"
+    - name: "Auctioneers"
+      text: "From consignment to catalogue. Write lot essays, segment bidders and personalise pre-sale outreach at scale."
+      image: "art-3.webp"
+      image_focus: "center 35%"
+    - name: "Registrars"
+      text: "Open up the archive. Enrich records, draft interpretive text and make the collection searchable for every audience."
+      image: "art-4.webp"
+      image_focus: "center 50%"
+    - name: "Artists"
+      text: "Tell the story behind every work. Keep a living archive, draft statements and share new work with the collectors most likely to love it."
+      image: "art-5.webp"
+      image_focus: "center 40%"
+    - name: "Curators"
+      text: "Research, write and assemble exhibitions faster. Pull together loans, wall labels and catalogue essays from one place."
+      image: "art-6.webp"
+      image_focus: "center 45%"
+
+one_place:
+  title: "Everything in one place"
+  subtitle: "See your whole business at a glance."
+  items:
+    - title: "Your work."
+      text: "Artworks, artists, archive and provenance."
+    - title: "Your story."
+      text: "Positioning, outreach, and a personal feed of the fairs, open calls and news that matter to you."
+    - title: "Your sales."
+      text: "Enquiries, follow-ups, invoices, artist splits and goals."
+    - title: "Your people."
+      text: "Collectors, clients, partners and team."
+
+your_data:
+  title: "Your data, your technology, your freedom"
+  intro: "Cimelium runs on your own system, not someone else’s cloud. Your archive, client list and records stay private and yours to keep, even if you ever stop working with us."
+  points:
+    - title: "Your records stay with you."
+      text: "Cimelium runs on your own computer or server, not on someone else’s platform. If you ever stop working with us, nothing disappears."
+    - title: "Routine work, done reliably."
+      text: "Repetitive tasks run the same way every time, quietly in the background."
+    - title: "Nothing goes out without you."
+      text: "When something needs judgement, like an email to a collector or a catalogue text, it arrives as a draft for you to approve."
+
+pilot:
+  label: "Pilot program"
+  title: "Join our pilot partner program"
+  body: "Ready to grow your business sustainably, with a system of work that will save you countless hours and enable your team concentrate on relationship building? Want to cut your dependency on technology companies and finally own your own solution?"
+  closing: "Intrigued? Join other pioneers building with us today."
+  button:
+    label: "Book a call"
+    link: "#"   # swap in the booking link (Calendly etc.) when there is one
+  image: "drapery.webp"
+  image_alt: "Sepia drawing of drapery folds"
+
+footer:
+  email: "hello@cimelium.com"

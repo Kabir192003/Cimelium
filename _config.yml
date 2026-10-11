@@ -1,0 +1,7 @@
+title: Cimelium
+description: The first open platform for the Art World
+baseurl: /Cimelium
+url: https://kabir192003.github.io
+
+exclude:
+  - README.md
