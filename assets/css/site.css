@@ -38,7 +38,8 @@ a:hover { color: var(--brick-dark); }
 
 /* Hero */
 .hero { padding-top: clamp(40px,6vw,88px); padding-bottom: clamp(72px,8vw,128px); display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,480px),1fr)); align-items: start; gap: clamp(40px,5vw,96px); min-height: min(calc(100vh - 72px),880px); }
-.hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(24px,2.6vw,36px); max-width: 640px; }
+/* sits above the painting's glow, which reaches up over the button when the hero stacks on phones */
+.hero-text { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: clamp(24px,2.6vw,36px); max-width: 640px; }
 .brand-slot { height: clamp(40px,3.8vw,56px); width: clamp(166px,15.8vw,232px); margin-bottom: clamp(40px,6vh,84px); flex: none; }
 .hero h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(46px,6vw,90px); line-height: 1.02; letter-spacing: -.018em; color: var(--ink); text-wrap: balance; }
 .accent { color: var(--brick); }
