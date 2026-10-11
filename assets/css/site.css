@@ -56,7 +56,9 @@ a:hover { color: var(--brick-dark); }
 }
 
 /* Business model */
-.model { border-top: 1px solid rgba(61,58,55,.14); padding: clamp(72px,10vw,150px) 0; }
+/* divider runs the full width of the screen, like the one above the role cards */
+.model-section { border-top: 1px solid rgba(61,58,55,.14); }
+.model { padding-top: clamp(72px,10vw,150px); padding-bottom: clamp(72px,10vw,150px); }
 .model-copy { display: flex; flex-direction: column; gap: 22px; max-width: 520px; padding-top: 8px; }
 .model-lead { margin: 0; font-size: clamp(18px,1.45vw,21px); line-height: 1.45; font-weight: 500; color: var(--ink); text-wrap: pretty; }
 
