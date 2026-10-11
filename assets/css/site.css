@@ -85,7 +85,7 @@ a:hover { color: var(--brick-dark); }
 .mcard-num { position: relative; align-self: flex-start; padding: 8px 12px; background: rgba(243,241,236,.92); font-family: var(--serif); font-size: 22px; line-height: 1; color: var(--brick); }
 .mcard-copy { position: relative; box-sizing: border-box; padding: 20px; background: rgba(243,241,236,.93); display: flex; flex-direction: column; gap: 12px; }
 .mcard-copy h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 34px; color: #34302d; }
-.mcard-copy p { margin: 0; font-size: 15px; line-height: 1.6; color: #3f3a36; }
+.mcard-copy p { margin: 0; font-size: 15px; line-height: 1.6; color: #3f3a36; max-width: 34em; }
 
 /* Everything in one place */
 /* no divider above this section, so it starts close to the role cards */
@@ -93,7 +93,10 @@ a:hover { color: var(--brick-dark); }
 .one-place-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; margin-bottom: clamp(52px,6vw,96px); }
 .one-place-head .h2 { max-width: none; }
 .one-place-sub { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(19px,1.6vw,23px); color: var(--ink-soft); }
-.pillars { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,240px),1fr)); gap: clamp(36px,3.4vw,56px); }
+/* 1, 2 or 4 across, never 3 + 1 leaving one pillar on its own */
+.pillars { display: grid; grid-template-columns: minmax(0,1fr); gap: clamp(36px,3.4vw,56px); }
+@media (min-width: 560px) { .pillars { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (min-width: 1000px) { .pillars { grid-template-columns: repeat(4,minmax(0,1fr)); } }
 .pillar { position: relative; display: flex; flex-direction: column; gap: 14px; padding-top: 28px; }
 .pillar::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(61,58,55,.22); }
 .pillar::after { content: ""; position: absolute; top: -1px; left: 0; width: 40px; height: 3px; background: var(--brick); }
@@ -109,7 +112,7 @@ a:hover { color: var(--brick-dark); }
 @media (min-width: 900px) { .points { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 .point { display: grid; grid-template-columns: 36px minmax(0,1fr); gap: 8px; padding: 26px 0; border-top: 1px solid rgba(61,58,55,.18); }
 .point span { font-family: var(--serif); font-size: 18px; color: var(--brick); }
-.point p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-soft); text-wrap: pretty; }
+.point p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-soft); text-wrap: pretty; max-width: 34em; }
 .point strong { font-weight: 500; color: var(--ink); }
 
 /* Pilot program: full width, straight after "Your data", text on the left and the drapery filling the right */
