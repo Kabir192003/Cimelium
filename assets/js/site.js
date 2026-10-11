@@ -1,6 +1,6 @@
 // Scroll motion for the Cimelium home page. Only four things move:
 // the logo morph, the hero parallax/depth, the stacking role cards with
-// their counter, and the drapery reveal in the pilot section.
+// their counter, and a gentle drift on the drapery in the pilot section.
 (function () {
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const ease = t => 1 - Math.pow(1 - t, 3);
@@ -88,14 +88,14 @@
     };
   }
 
-  // Pilot: the drapery opens up as it scrolls into view
+  // Pilot: the drapery drifts gently inside its frame as the section scrolls past.
+  // It's scaled up 10%, which leaves 5% spare on each edge, and only moves ±4%.
   function drapery() {
-    const img = document.querySelector('[data-clip]');
+    const img = document.querySelector('[data-drapery]');
     return () => {
-      if (!img) return;
-      const t = ease(clamp((pass(img.parentElement, innerHeight) - .05) / .42)), a = (1 - t) * 14, b = (1 - t) * 22;
-      img.style.clipPath = `inset(${a.toFixed(2)}% ${b.toFixed(2)}% ${a.toFixed(2)}% ${b.toFixed(2)}%)`;
-      img.style.transform = `scale(${(1.1 - .1 * t).toFixed(4)})`;
+      if (!img || reduce) return;
+      const t = pass(img.parentElement, innerHeight);
+      img.style.transform = `translate3d(0,${((.5 - t) * 8).toFixed(2)}%,0) scale(1.1)`;
     };
   }
 

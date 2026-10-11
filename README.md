@@ -22,7 +22,7 @@ A few things to know:
 | `_data/home.yml` | All the content |
 | `index.html` | Page structure (pulls everything from the YAML) |
 | `assets/css/site.css` | Layout, type and colours |
-| `assets/js/site.js` | Scroll motion: logo morph, hero parallax, stacking cards, drapery reveal |
+| `assets/js/site.js` | Scroll motion: logo morph, hero parallax, stacking cards, drapery drift |
 | `assets/img/` | Paintings and logos |
 
 ## Running it locally
