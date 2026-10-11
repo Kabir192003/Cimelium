@@ -8,7 +8,7 @@ booking:
   # Your Cal.com link: the part after cal.com/, e.g. "cimelium/intro-call".
   # Once it's filled in, both "Book a call" buttons open the booking calendar
   # in a pop-up. Leave it empty and they use the button links below instead.
-  cal_link: ""
+  cal_link: "kabir-sharma-fgvdib/15min"
 
 hero:
   title: "The first open platform for the"
