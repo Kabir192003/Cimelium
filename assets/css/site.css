@@ -74,9 +74,8 @@ a:hover { color: var(--brick-dark); }
 .counter { position: absolute; left: 0; top: 50%; height: clamp(150px,15vw,230px); margin-top: calc(clamp(150px,15vw,230px) / -2); width: 100%; font-family: var(--serif); font-size: clamp(150px,15vw,230px); line-height: 1; color: var(--brick); letter-spacing: -.04em; }
 .counter span { position: absolute; left: 0; top: 0; will-change: opacity; }
 .cards { display: flex; flex-direction: column; gap: 28px; padding-bottom: 10vh; }
-.card { position: sticky; height: clamp(340px,54vh,470px); background: #ece7dd; overflow: hidden; border: 1px solid rgba(61,58,55,.12); box-sizing: border-box; padding: clamp(28px,3vw,44px); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; transform-origin: center top; will-change: transform; }
+.card { position: sticky; height: clamp(340px,54vh,470px); background: #ece7dd; overflow: hidden; border: 1px solid rgba(61,58,55,.12); box-sizing: border-box; padding: clamp(28px,3vw,44px); display: flex; flex-direction: column; justify-content: flex-end; gap: 24px; transform-origin: center top; will-change: transform; }
 .card img, .mcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.card-rule { position: relative; display: block; width: 28px; height: 2px; background: var(--brick); }
 .card-copy { position: relative; align-self: flex-start; max-width: min(100%,560px); box-sizing: border-box; padding: clamp(20px,2vw,28px) clamp(22px,2.2vw,32px); background: rgba(243,241,236,.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; flex-direction: column; gap: 14px; }
 .card-copy h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(40px,4vw,62px); line-height: 1; letter-spacing: -.012em; color: #34302d; }
 .card-copy p { margin: 0; font-size: 17px; line-height: 1.6; color: #3f3a36; max-width: 46ch; text-wrap: pretty; }

@@ -65,7 +65,6 @@
         {%- for r in c.roles.items %}
         <div class="card" data-card style="top:{{ forloop.index0 | times: 18 | plus: 96 }}px">
           <img src="{{ img }}{{ r.image }}" alt="" style="object-position:{{ r.image_focus }}">
-          <span class="card-rule"></span>
           <div class="card-copy"><h3>{{ r.name }}</h3><p>{{ r.text }}</p></div>
         </div>
         {%- endfor %}
