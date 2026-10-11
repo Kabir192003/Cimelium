@@ -4,6 +4,12 @@
 #
 # Images go in assets/img/. Refer to them by file name only.
 
+booking:
+  # Your Cal.com link: the part after cal.com/, e.g. "cimelium/intro-call".
+  # Once it's filled in, both "Book a call" buttons open the booking calendar
+  # in a pop-up. Leave it empty and they use the button links below instead.
+  cal_link: ""
+
 hero:
   title: "The first open platform for the"
   title_highlight: "Art World"   # shown in brick red at the end of the heading

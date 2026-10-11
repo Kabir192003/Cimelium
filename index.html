@@ -2,6 +2,9 @@
 ---
 {%- assign c = site.data.home -%}
 {%- capture img -%}{{ '/assets/img/' | relative_url }}{%- endcapture -%}
+{%- assign cal_link = c.booking.cal_link | strip -%}
+{%- comment -%} with a Cal.com link set, both "Book a call" buttons open the booking pop-up (and fall back to the Cal.com page if the script can't load) {%- endcomment -%}
+{%- capture booking -%}{% if cal_link != "" %} href="https://cal.com/{{ cal_link }}" target="_blank" rel="noopener" data-cal-link="{{ cal_link }}" data-cal-namespace="book" data-cal-config='{"layout":"month_view"}'{% endif %}{%- endcapture -%}
 {%- capture cal -%}<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5"></rect><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"></path></svg>{%- endcapture -%}
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +27,7 @@
     <div class="brand-slot" data-brand-slot aria-hidden="true"></div>
     <h1>{{ c.hero.title }} <span class="accent">{{ c.hero.title_highlight }}</span></h1>
     <p class="hero-sub">{{ c.hero.subtitle }}</p>
-    <a class="btn btn-red" href="{{ c.hero.button.link }}">{{ cal }} {{ c.hero.button.label }}</a>
+    <a class="btn btn-red"{% if cal_link != "" %}{{ booking }}{% else %} href="{{ c.hero.button.link }}"{% endif %}>{{ cal }} {{ c.hero.button.label }}</a>
   </div>
   <div class="hero-art">
     <div class="hero-glow"></div>
@@ -118,7 +121,7 @@
       </div>
       <div class="pilot-foot">
         <p class="pilot-closing">{{ c.pilot.closing }}</p>
-        <a class="btn btn-light" href="{{ c.pilot.button.link }}">{{ cal }} {{ c.pilot.button.label }}</a>
+        <a class="btn btn-light"{% if cal_link != "" %}{{ booking }}{% else %} href="{{ c.pilot.button.link }}"{% endif %}>{{ cal }} {{ c.pilot.button.label }}</a>
       </div>
     </div>
     <div class="pilot-art">
@@ -148,5 +151,20 @@
 
 </div>
 <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+{%- if cal_link != "" %}
+<script>
+  // Cal.com's standard embed loader
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "book", { origin: "https://cal.com" });
+  Cal.ns.book("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { light: { "cal-brand": "#a3301c" } } });
+  // once the pop-up script is in, stop the buttons also opening cal.com in a new tab
+  (function () {
+    let ready = false;
+    const s = document.querySelector('script[src*="cal.com/embed/embed.js"]');
+    if (s) s.addEventListener('load', () => { ready = true; });
+    document.addEventListener('click', e => { if (ready && e.target.closest('[data-cal-link]')) e.preventDefault(); });
+  })();
+</script>
+{%- endif %}
 </body>
 </html>
