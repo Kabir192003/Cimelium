@@ -57,17 +57,17 @@ roles:
       image_focus: "center 45%"
 
 one_place:
-  title: "Everything in one place"
-  subtitle: "See your whole business at a glance."
+  title: "Your business evolves. Your software should too."
+  subtitle: "Start with the capabilities you need. Adapt your workflows, add extensions, or build new functionality with AI coding agents. Cimelium grows with your business — without forcing you into a fixed product or making you build everything from scratch."
   items:
-    - title: "Your work."
-      text: "Artworks, artists, archive and provenance."
-    - title: "Your story."
-      text: "Positioning, outreach, and a personal feed of the fairs, open calls and news that matter to you."
-    - title: "Your sales."
-      text: "Enquiries, follow-ups, invoices, artist splits and goals."
-    - title: "Your people."
-      text: "Collectors, clients, partners and team."
+    - title: "Start with what you need"
+      text: "Use the capabilities that fit your business today. Add more as your needs change."
+    - title: "Make it work your way"
+      text: "Adapt workflows and functionality to the way your business actually operates."
+    - title: "Extend without starting over"
+      text: "Add capabilities through an ecosystem of extensions rather than replacing your system."
+    - title: "Build what is missing"
+      text: "AI coding agents help create and maintain functionality tailored to your needs."
 
 your_data:
   title: "Your data, your technology, your freedom"
