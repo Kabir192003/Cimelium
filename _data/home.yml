@@ -57,16 +57,16 @@ roles:
       image_focus: "center 45%"
 
 one_place:
-  title: "You evolve. Your software should too."
-  subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with your business — without forcing you into a fixed product or making you build everything from scratch."
+  title: "Software that evolves with you."
+  subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with your business."
   items:
     - title: "Start small"
       text: "Use the capabilities you need today."
     - title: "Adapt your workflows"
       text: "Shape the system around how you operate."
-    - title: "Extend your capabilities"
+    - title: "Extend your use cases"
       text: "Add functionality through an ecosystem of extensions."
-    - title: "Build what's missing"
+    - title: "Build the rest"
       text: "Use coding agents to develop functionality tailored to your needs."
 
 your_data:
