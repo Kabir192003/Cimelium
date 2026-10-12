@@ -57,8 +57,8 @@ roles:
       image_focus: "center 45%"
 
 one_place:
-  title: "Your business evolves. Your software should too."
-  subtitle: "Start with the capabilities you need. Adapt your workflows, add extensions, or build new functionality with AI coding agents. Cimelium grows with your business — without forcing you into a fixed product or making you build everything from scratch."
+  title: "Your business. Your way of working. Your software."
+  subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with your business — without forcing you into a fixed product or making you build everything from scratch."
   items:
     - title: "Start with what you need"
       text: "Use the capabilities that fit your business today. Add more as your needs change."
