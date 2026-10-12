@@ -13,7 +13,7 @@ booking:
 hero:
   title: "Art world software that works"
   title_highlight: "your way"   # shown in brick red at the end of the heading
-  subtitle: "An open platforma built for the art world, that adapts to how you work — not the other way around."
+  subtitle: "An open platform built for the art world, that adapts to how you work — not the other way around."
   button:
     label: "Book a call"
     link: "#book"
@@ -57,7 +57,7 @@ roles:
       image_focus: "center 45%"
 
 one_place:
-  title: "Your business. Your way of working. Your software."
+  title: "Flexible software tailored to you."
   subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with your business — without forcing you into a fixed product or making you build everything from scratch."
   items:
     - title: "Start with what you need"
