@@ -22,7 +22,7 @@ hero:
 
 business_model:
   title: "Put AI to work across your business"
-  lead: "Cimelium uses AI to help you research opportunities, prepare communications and manage routine work through workflows built around your business."
+  lead: "Cimelium uses AI to help you research opportunities, prepare communications and manage routine tasks using the information and records you already rely on."
   body: "Unlike a general-purpose AI assistant, Cimelium turns AI capabilities into repeatable business processes, with your private records kept under your control and your team in charge of decisions and actions."
 
 roles:
@@ -58,7 +58,7 @@ roles:
 
 one_place:
   title: "Software that evolves with you."
-  subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with your business."
+  subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with you."
   items:
     - title: "Compose"
       text: "Start small, with building blocks that mirror your business model and data."
@@ -74,7 +74,7 @@ your_data:
   intro: "Your business is too important to be locked into any software vendor. Cimelium is designed to put you in control of your data, your software and where it runs — so you can build on what you have, without being locked into a fixed product."
   points:
     - title: "Your data. Your control."
-      text: "Keep control of your business information, including how it is stored, accessed and used."
+      text: "Your information, your working methods and the relationships you build should remain yours to control."
     - title: "Your software. Your ownership."
       text: "Own the solution and retain the freedom to adapt, extend and adjust what you build."
     - title: "Your infrastructure. Your choice."
