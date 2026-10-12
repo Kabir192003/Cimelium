@@ -21,9 +21,9 @@ hero:
   image_alt: "Painting of an abstract red and black figure"
 
 business_model:
-  title: "Software that works your way"
-  lead: "Cimelium brings your art business's records, workflows and AI tools together in one adaptable system. Start with what you need, connect the tools you already use, and extend your software as your business evolves."
-  body: "Cimelium's AI assistants work with your business information and workflows to help your team research opportunities, manage routine work and build stronger collector relationships. Sensitive information remains under your control, and communications are prepared for your team to review and approve."
+  title: "Put AI to work across your business"
+  lead: "Cimelium's AI assistants help you research opportunities, prepare communications and manage routine work using your business information. Your team stays in charge of decisions and actions."
+  body: "TODO"
 
 roles:
   label: "Built around the way the art world works"
@@ -60,29 +60,29 @@ one_place:
   title: "You evolve. Your software should too."
   subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with your business — without forcing you into a fixed product or making you build everything from scratch."
   items:
-    - title: "Start with what you need"
-      text: "Use the capabilities that fit your business today. Add more as your needs change."
-    - title: "Make it work your way"
-      text: "Adapt workflows and functionality to the way your business actually operates."
-    - title: "Extend without starting over"
-      text: "Add capabilities through an ecosystem of extensions rather than replacing your system."
-    - title: "Build what is missing"
-      text: "AI coding agents help create and maintain functionality tailored to your needs."
+    - title: "Start small"
+      text: "Use the capabilities you need today."
+    - title: "Adapt your workflows"
+      text: "Shape the system around how you operate."
+    - title: "Extend your capabilities"
+      text: "Add functionality through an ecosystem of extensions."
+    - title: "Build what's missing"
+      text: "Use coding agents to develop functionality tailored to your needs."
 
 your_data:
   title: "Your data, your technology, your freedom"
-  intro: "Your business data should remain under your control. Cimelium is designed for local and private deployment, with cloud services where you choose to use them. Your records and your software remain yours — not something you lose if you change providers."
+  intro: "Your business information and software should remain under your control. Cimelium supports local and private deployment, with cloud services where needed."
   points:
-    - title: "Your records stay with you."
-      text: "Own your code and business records. Keep access to what you have built, even if you stop working with Cimelium."
-    - title: "Routine work, done reliably."
-      text: "Automate repeatable processes through defined workflows, with less manual administration and fewer things falling through the cracks."
-    - title: "Nothing goes out without you."
-      text: "AI prepares work for review where judgement matters. Your team decides what gets sent, shared or acted upon."
+    - title: "Your records remain yours"
+      text: "Keep control of your business data and how it is used."
+    - title: "Your software remains yours"
+      text: "Own your code and retain the ability to adapt and maintain it."
+    - title: "Choose how you run it"
+      text: "Use local, private or cloud deployment options to suit your requirements."
 
 pilot:
   title: "Join our pilot partner program"
-  body: "Help shape a better way to run an art business with AI. Work with us to adapt Cimelium to your workflows, reduce routine administration and give your team more time for the relationships that matter. Keep control of your data and your software as your business evolves."
+  body: "We're working with early partners to develop and refine Cimelium around real art-market workflows. Join us to help shape what comes next."
   closing: "Intrigued? Join other pioneers building with us today."
   button:
     label: "Book a call"
