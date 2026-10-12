@@ -11,9 +11,9 @@ booking:
   cal_link: "https://cal.com/cimelium/30min"
 
 hero:
-  title: "The first open platform for the"
-  title_highlight: "Art World"   # shown in brick red at the end of the heading
-  subtitle: "We make acquiring, managing and sharing art 10x easier, through our AI-first platform"
+  title: "Your art business. Your way of working."
+  title_highlight: "Your software."   # shown in brick red at the end of the heading
+  subtitle: "A business system built for the art world, with AI that adapts to how you work — not the other way around."
   button:
     label: "Book a call"
     link: "#book"
@@ -21,12 +21,12 @@ hero:
   image_alt: "Painting of an abstract red and black figure"
 
 business_model:
-  title: "Bring your own business model"
-  lead: "Personalizing the art market through bespoke AI solutions focusing on acquisition, management, and sharing"
-  body: "Our Art Intelligence assistants help galleries increase their sales and marketing impact by automating internal processes and generating hyper-personalized outreach for gallery staff to review and approve."
+  title: "Software that works your way"
+  lead: "Cimelium brings your art business's records, workflows and AI tools together in one adaptable system. Start with what you need, connect the tools you already use, and extend your software as your business evolves."
+  body: "Cimelium's AI assistants work with your business information and workflows to help your team research opportunities, manage routine work and build stronger collector relationships. Sensitive information remains under your control, and communications are prepared for your team to review and approve."
 
 roles:
-  label: "Built for every corner of the art market"
+  label: "Built around the way the art world works"
   # Each role becomes one stacking card. The big counter (01, 02 …) is
   # numbered automatically, so adding or removing a role just works.
   # image_focus picks which part of the painting stays in view (CSS object-position).
@@ -71,18 +71,18 @@ one_place:
 
 your_data:
   title: "Your data, your technology, your freedom"
-  intro: "Cimelium runs on your own system, not someone else’s cloud. Your archive, client list and records stay private and yours to keep, even if you ever stop working with us."
+  intro: "Your business data should remain under your control. Cimelium is designed for local and private deployment, with cloud services where you choose to use them. Your records and your software remain yours — not something you lose if you change providers."
   points:
     - title: "Your records stay with you."
-      text: "Cimelium runs on your own computer or server, not on someone else’s platform. If you ever stop working with us, nothing disappears."
+      text: "Own your code and business records. Keep access to what you have built, even if you stop working with Cimelium."
     - title: "Routine work, done reliably."
-      text: "Repetitive tasks run the same way every time, quietly in the background."
+      text: "Automate repeatable processes through defined workflows, with less manual administration and fewer things falling through the cracks."
     - title: "Nothing goes out without you."
-      text: "When something needs judgement, like an email to a collector or a catalogue text, it arrives as a draft for you to approve."
+      text: "AI prepares work for review where judgement matters. Your team decides what gets sent, shared or acted upon."
 
 pilot:
   title: "Join our pilot partner program"
-  body: "Ready to grow your business sustainably, with a system of work that will save you countless hours and enable your team concentrate on relationship building? Want to cut your dependency on technology companies and finally own your own solution?"
+  body: "Help shape a better way to run an art business with AI. Work with us to adapt Cimelium to your workflows, reduce routine administration and give your team more time for the relationships that matter. Keep control of your data and your software as your business evolves."
   closing: "Intrigued? Join other pioneers building with us today."
   button:
     label: "Book a call"
