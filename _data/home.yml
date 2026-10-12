@@ -60,14 +60,14 @@ one_place:
   title: "Software that evolves with you."
   subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with your business."
   items:
-    - title: "Start small"
-      text: "Use the capabilities you need today."
-    - title: "Adapt your workflows"
-      text: "Shape the system around how you operate."
-    - title: "Extend your use cases"
-      text: "Add functionality through an ecosystem of extensions."
-    - title: "Build the rest"
-      text: "Use coding agents to develop functionality tailored to your needs."
+    - title: "Compose"
+      text: "Start small, with building blocks that mirror your business model and data."
+    - title: "Tailor"
+      text: "Shape the system around how you operate so everything earns its place."
+    - title: "Extend"
+      text: "Add workflows for new use cases through an open ecosystem of extensions."
+    - title: "Create"
+      text: "Use our agents to create new bespoke workflows tailored to your needs."
 
 your_data:
   title: "Your data, your technology, your freedom"
