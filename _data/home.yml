@@ -58,7 +58,7 @@ roles:
 
 one_place:
   title: "Software that evolves with you."
-  subtitle: "Start with what you need. Adapt your workflows, add extensions, or build new functionality. Cimelium grows with you."
+  subtitle: "Start with what you need, then adapt, extend, or create new functionality - Cimelium grows with you."
   items:
     - title: "Compose"
       text: "Start small, with building blocks that mirror your business model and data."
