@@ -13,7 +13,7 @@ booking:
 hero:
   title: "Art world software that works"
   title_highlight: "your way"   # shown in brick red at the end of the heading
-  subtitle: "A business system built for the art world, with AI that adapts to how you work — not the other way around."
+  subtitle: "An open platforma built for the art world, that adapts to how you work — not the other way around."
   button:
     label: "Book a call"
     link: "#book"
